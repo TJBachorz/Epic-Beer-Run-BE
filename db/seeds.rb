@@ -8,7 +8,6 @@
 Brewery.destroy_all
 require 'rest-client'
 require 'json'
-require 'byebug'
 
 states = [
     "Alaska",
