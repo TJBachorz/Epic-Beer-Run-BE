@@ -1,11 +1,7 @@
 class BreweriesController < ApplicationController
 
     def index 
-        if params[:state]
-            @breweries = Brewery.where('state LIKE ?', "%#{params[:state]}%")
-        else
-            @breweries = Brewery.all
-        end
+        @breweries = Brewery.all
         render json: @breweries
     end
 
