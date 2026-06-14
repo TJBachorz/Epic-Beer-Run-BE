@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: brewery_mapper_backend_production
-  username: brewery_mapper_backend
-  password: <%= ENV['BREWERY_MAPPER_BACKEND_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
