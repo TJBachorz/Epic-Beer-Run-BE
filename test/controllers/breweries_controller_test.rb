@@ -1,7 +1,34 @@
 require 'test_helper'
 
 class BreweriesControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "GET /breweries returns 200 and an array" do
+    get breweries_url
+    assert_response :success
+    body = JSON.parse(response.body)
+    assert_kind_of Array, body
+  end
+
+  test "GET /breweries includes fixture breweries" do
+    get breweries_url
+    assert_response :success
+    body = JSON.parse(response.body)
+    names = body.map { |b| b["name"] }
+    assert_includes names, breweries(:one).name
+    assert_includes names, breweries(:two).name
+  end
+
+  test "GET /breweries/:id returns 200 and the correct brewery" do
+    brewery = breweries(:one)
+    get brewery_url(brewery)
+    assert_response :success
+    body = JSON.parse(response.body)
+    assert_equal brewery.id, body["id"]
+    assert_equal brewery.name, body["name"]
+    assert_equal brewery.state, body["state"]
+  end
+
+  test "GET /breweries/:id with unknown id returns 404" do
+    get brewery_url(id: 0)
+    assert_response :not_found
+  end
 end
