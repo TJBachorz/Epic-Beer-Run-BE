@@ -4,8 +4,8 @@ class ApplicationController < ActionController::API
 
   private
 
-  def not_found
-    Rails.logger.warn("404 Not Found: #{request.path}")
+  def not_found(exception = nil)
+    Rails.logger.warn("404 Not Found: #{request.path} | #{exception&.class}: #{exception&.message}")
     render json: { error: "Not found" }, status: :not_found
   end
 end
