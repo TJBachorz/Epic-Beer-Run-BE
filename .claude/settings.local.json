@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "PowerShell(wsl -e bash -c \"cat ~/.bashrc; echo '=== END BASHRC ==='\")",
-      "PowerShell(wsl -e bash -c \"cat ~/.bash_profile 2>/dev/null || echo 'no .bash_profile'; echo '---'; cat ~/.profile 2>/dev/null\")"
-    ]
-  }
-}
