@@ -65,7 +65,7 @@ states = [
 def seed_all_breweries states
     states.each do |state|
         num = 1
-        data = RestClient.get("https://api.openbrewerydb.org/breweries?by_state=#{state.split(" ").join("_")}&per_page=50&page=#{num}")
+        data = RestClient.get("https://api.openbrewerydb.org/v1/breweries?by_state=#{state.split(" ").join("_")}&per_page=50&page=#{num}")
         result = JSON.parse(data)
         if result
             result.each do |brewery|
