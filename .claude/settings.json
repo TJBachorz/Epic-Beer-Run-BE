@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"\\\\\\\\wsl.localhost\\\\Ubuntu\\\\home\\\\tjbachorz\\\\VM_Home\\\\development\\\\Epic-Beer-Run-BE\" log --oneline -10)",
+      "PowerShell(wsl -e bash -c \"cd ~/VM_Home/development/Epic-Beer-Run-BE && git checkout -b v2/dependency-upgrades && git status\")",
+      "PowerShell(wsl -e bash -c \"cd ~/VM_Home/development/Epic-Beer-Run-BE && git add docs/superpowers/plans/2026-06-14-ruby33-rails72-render-deployment.md && git commit -m 'Add implementation plan for Ruby 3.3/Rails 7.2 upgrade and Render deployment'\")",
+      "Read(//c/Users/TJBac/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/subagent-driven-development/**)",
+      "PowerShell(wsl -e bash -c \"cd ~/VM_Home/development/Epic-Beer-Run-BE && git rev-parse HEAD\")",
+      "PowerShell(wsl -e bash -c \"rbenv install 3.3.6 2>&1\")",
+      "PowerShell(wsl -e bash -c \"source ~/.bashrc 2>/dev/null; which rbenv 2>&1 || echo 'not found after bashrc'; ls ~/.rbenv/bin/ 2>&1 | head -5\")"
+    ]
+  }
+}
