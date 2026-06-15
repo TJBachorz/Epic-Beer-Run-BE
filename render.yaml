@@ -3,7 +3,7 @@ services:
     name: epic-beer-run-be
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec rails db:migrate && bundle exec puma -C config/puma.rb"
+    startCommand: "bundle exec rails db:migrate && bundle exec rails db:seed_if_empty && bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         sync: false
