@@ -1,6 +1,7 @@
 name: Keep Alive
 
 on:
+  workflow_dispatch:
   schedule:
     # Mon-Fri, noon to midnight UTC = 8am-8pm ET / 5am-5pm PT (daylight time)
     - cron: '*/15 12-23 * * 1-5'
